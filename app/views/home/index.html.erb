@@ -1,0 +1,11 @@
+<h1>Tweets</h1>
+
+<table>
+	<% @tweets.each do |t| %>
+		<tr>
+			<td><%= t.account_name %></td>
+			<td><%= t.content %></td>
+			<td><%= t.posted_at %></td>
+		</tr>
+	<% end %>
+</table>

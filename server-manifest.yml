@@ -1,0 +1,18 @@
+--- 
+applications: 
+  .: 
+    name: resque-test
+    url: ${name}.${target-base}
+    framework: 
+      name: rails3
+      info: 
+        mem: 256M
+        description: Rails Application
+        exec: 
+    mem: 256M
+    instances: 1
+    services: 
+      resque-test-mysql: 
+        type: mysql
+      resque-test-redis: 
+        type: redis

@@ -1,0 +1,20 @@
+--- 
+applications: 
+  .: 
+    name: resque-test-worker
+    framework: 
+      name: standalone
+      info: 
+        mem: 64M
+        description: Standalone Application
+        exec: 
+    runtime: ruby19
+    command: bundle exec rake environment VERBOSE=true QUEUE=twitter_reader resque:work
+    url: 
+    mem: 128M
+    instances: 1
+    services: 
+      resque-test-mysql: 
+        type: mysql
+      resque-test-redis: 
+        type: redis
